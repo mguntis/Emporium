@@ -53,8 +53,8 @@
       <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+            <state relative-caret-position="205">
+              <caret line="58" column="69" lean-forward="false" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -595,12 +595,12 @@
       <workItem from="1489521252124" duration="27408000" />
       <workItem from="1490096882813" duration="23262000" />
       <workItem from="1490129161138" duration="259000" />
-      <workItem from="1490129563335" duration="6830000" />
+      <workItem from="1490129563335" duration="7284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115486000" />
+    <option name="totallyTimeSpent" value="115940000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,7 +612,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24054463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1044,8 +1044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+        <state relative-caret-position="205">
+          <caret line="58" column="69" lean-forward="false" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
           <folding />
         </state>
       </provider>

@@ -62,6 +62,7 @@ gem 'rails-i18n'
 #gem 'bcrypt', platforms: :ruby
 gem 'bcrypt', '~> 3.1.11',  :require => 'bcrypt'
 
+
 group :development do
   gem 'sqlite3'
 end
@@ -69,4 +70,5 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
 end

@@ -1,0 +1,9 @@
+<table>
+  <tr>
+    <th><%= t(:name)%></th>
+    <th><%= t(:edit_it)%></th>
+    <th><%= t(:destroy_it)%></th>
+  </tr>
+  <%= render :partial => 'author', :collection => @authors %>
+</table>
+<p><%= link_to t(:add_a_new_author), :action => 'new' %></p>

@@ -1,0 +1,50 @@
+<%= form_for([:admin, @product]) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t(:title) %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label t(:seller_info) %><br>
+    <%= f.text_field :seller_info %>
+  </div>
+  <div class="field">
+    <%= f.label t(:description) %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label t(:amount) %><br>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label t(:type) %><br>
+    <%= f.text_field :types %>
+  </div>
+  <div class="field">
+    <%= f.label t(:category) %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label t(:price) %><br>
+    <%= f.text_field :price %>
+  </div>
+    <div class="field">
+      <label for="book_cover_image"><%= t(:pr_image) %></label><br>
+      <%= file_field 'product', 'cover_image' %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit :class => 'buttons' %>
+  </div>
+<% end %>

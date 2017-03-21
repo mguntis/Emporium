@@ -1,0 +1,6 @@
+<dl>
+  <dt><%= t(:name)%></dt>
+  <dd><%= @publisher.name %></dd>
+</dl>
+<%= link_to t(:edit_it), :action => 'edit', :id => @publisher %> |
+<%= link_to t(:back_it), admin_publishers_path %>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @page_title || 'Emporium' %></title>
+  <%= stylesheet_link_tag "application", media: "all",
+                          "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application",
+                             "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="shell">
+  <div id="header">
+    <div class="cl"></div>
+    <h1 id="logo"><a title="Home" href="#">Mega Store</a></h1>
+    <div id="top-navigation">
+      <ul>
+        <li><a class="start" title="My Account" href="#"><span></span>My Account</a></li>
+        <li><a class="cart" title="shopping cart" href="#"><span></span>shopping cart </a></li>
+        <li><%= link_to_unless_current " English ", locale: "en" %><span></span></li>
+        <li><%= link_to_unless_current " Latviešu ", locale: "lv" %><span></span></li>
+      </ul>
+    </div>
+    <div class="cl"></div>
+  </div>
+
+
+
+<!--<div id="header">-->
+  <!--<h1 id="logo">Emporium&trade;</h1>-->
+  <!--<h2 id="slogan"><%= t(:slogan)%></h2>-->
+<!--</div>-->
+
+<div id="navigation">
+  <ul>
+    <% if session[:user_id] %>
+        <li><a href="/admin/author"><%= t(:authors)%></a>&nbsp;|&nbsp;</li>
+        <li><a href="/admin/publishers"><%= t(:publisher)%></a>&nbsp;|&nbsp;</li>
+        <li><a href="/admin/books"><%= t(:books)%></a>&nbsp;|&nbsp;</li>
+        <li><a href="/catalog"><%= t(:catalog)%></a>&nbsp;|&nbsp;</li>
+        <li><a href="/about"><%= t(:about)%></a>&nbsp;</li>
+        <li><a href="/logout">LogOut</a>&nbsp;|&nbsp;</li>
+    <% else %>
+        <li><a href="/catalog"><%= t(:catalog)%></a>&nbsp;|&nbsp;</li>
+        <li><a href="/about"><%= t(:about)%></a>&nbsp;|&nbsp;</li>
+        <li><a href="/login">Login</a>&nbsp;|&nbsp;</li>
+        <li><a href="/signup">SignUp</a>&nbsp;|&nbsp;</li>
+    <% end %>
+  </ul>
+</div>
+
+  <div id="main">
+    <div id="content">
+      <%= "<h1>#{@page_title}</h1>".html_safe if @page_title %>
+      <% if flash[:notice] %>
+          <div id="notice">
+            <%= flash[:notice] %>
+          </div>
+      <% end %>
+      <%= yield %>
+    </div>
+
+    <div id="sidebar">
+      <div class="box">
+        <h2>Cart</h2>
+        <ul>
+
+        </ul>
+      </div>
+      <div class="cl"></div>
+    </div>
+
+    <div class="cl"></div>
+
+
+    <div id="footer-bottom">
+      <p>&copy; 2016 Emporium</p>
+    </div>
+    <div class="cl"></div>
+
+  </div>
+  </div>
+
+</body>
+</html>

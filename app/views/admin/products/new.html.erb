@@ -1,0 +1,7 @@
+<h1><%= t(:new_product) %></h1>
+
+<%= form_tag( {:action => 'create'}, :multipart => true ) do %>
+    <%= render :partial => 'form' %>
+<% end %>
+
+<%= link_to t(:back_it), admin_products_path %>

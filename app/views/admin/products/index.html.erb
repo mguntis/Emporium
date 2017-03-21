@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t(:title)%></th>
+      <th><%= t(:seller_info)%></th>
+      <th><%= t(:amount)%></th>
+      <th><%= t(:type)%></th>
+      <th><%= t(:category)%></th>
+      <th><%= t(:price)%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.seller_info %></td>
+        <td><%= product.amount %></td>
+        <td><%= product.types %></td>
+        <td><%= product.category %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to t(:show_it), :action => 'show', :id => product %></td>
+        <td><%= link_to t(:edit_it),:action => 'edit', :id => product %></td>
+        <td><%= link_to t(:destroy_it), product, :method => :delete,  data: { confirm: t(:are_you_shure_delete) }%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to t(:new_product), :action => 'new' %>

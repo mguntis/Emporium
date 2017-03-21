@@ -1,0 +1,97 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  price: "Price"
+  publisher: "Publisher"
+  page: "page"
+  listing_books: "Listing books"
+  product_was_successfully_created: "Product was successfully created."
+  product_was_successfully_updated: "Product was successfully updated."
+  product_was_successfully_destroyed: "Product was successfully destroyed."
+  show_it: "Show"
+  edit_it: "Edit"
+  destroy_it: "Destroy"
+  are_you_shure: "Are you sure?"
+  new_book: "New Book"
+  title: "Title"
+  authors: "Authors"
+  books: "Books"
+  catalog: "Catalog"
+  about: "About"
+  slogan: "Books on Rails"
+  published_at: "Published at"
+  blurb: "Blurb"
+  page_count: "Page count"
+  cover_image: "Cover image"
+  back_it: "Back"
+  create_it: "Create"
+  editing_book: "Editing book"
+  new_book: "New Book"
+  listing_publishers: "Listing publishers"
+  name: "Name"
+  new_publisher: "New pubisher"
+  editing_publisher: "Editing Publisher"
+  first_name: "First Name"
+  last_name: "Last Name"
+  are_you_shure_delete: "Are you sure you want to delete this item?"
+  add_a_new_author: "Add a new author"
+  listing_authors: "Listing authors"
+  edit_author: "Edit author"
+  author_success: "Author was successfully updated."
+  author_success_create: " was successfully created."
+  successfully_deleted_author: "Successfully deleted author"
+  book_list: "Book list"
+  not_found: "Not Found"
+  latest_books: "Latest Books"
+  added: "Added"
+  removed: "Removed"
+  cleared_the_cart: "Cleared the cart"
+  your_shopping_cart: "Your Shopping Cart"
+  total: "Total:"
+  clear_cart: "Clear cart"
+  please_confirm_adding: "Please confirm adding"
+  to_your_shopping_cart: "to your shopping cart."
+  confirm: "Confirm"
+  please_confirm_clearing_your_shopping_cart: "Please confirm clearing your shopping cart."
+  pc: "pc"
+  pcs: "pcs"
+  remove: "REMOVE"
+  back_to_catalog: "Back to Catalog"
+
+  product: "Products"
+  new_product: "New Product"
+  seller_info: "Producer Info"
+  description: "Description"
+  amount: "Amount"
+  type: "Type"
+  category: "Category"
+  listing_products: "Listing products"
+  sign_up: "Sign Up"
+  logout: "Log Out"
+  log_in: "Log In"
+  password: "Password:"
+  username_or_email: "Username or Email:"
+  user_name: "Username:"
+  email: "E-mail:"
+  password_conf: "Password Confirmation:"
+  welcome_msg: "Welcome to Emporium!"
+  pr_image: "Product Cover"

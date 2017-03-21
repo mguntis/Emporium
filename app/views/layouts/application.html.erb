@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @page_title || 'Emporium' %></title>
+  <%= stylesheet_link_tag "application", media: "all",
+                          "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application",
+                             "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+  <div class="shell">
+    <p id="top-nav">
+      <% if session[:user_id] %>
+        <p id="top-nav"><span class="welcome"> <%= t(:welcome_msg)%> </span><a href="#" title="Eng"><%= link_to_unless_current "English", locale: "en" %></a><span>|</span><a href="#" title="LV"><%= link_to_unless_current "Latviešu", locale: "lv" %></a><span>|</span><a href="#" title="Nosrsk"><%= link_to_unless_current "Norwegian", locale: "norsk" %></a><span>|</span><a href="/logout" title="logout"><%= t(:logout)%></a></p>
+      <% else %>
+        <p id="top-nav"><span class="welcome"> <%= t(:welcome_msg)%> </span><a href="#" title="Eng"><%= link_to_unless_current "English", locale: "en" %></a><span>|</span><a href="#" title="LV"><%= link_to_unless_current "Latviešu", locale: "lv" %></a><span>|</span><a href="#" title="Nosrsk"><%= link_to_unless_current "Norwegian", locale: "norsk" %></a><span>|</span><a href="/" title="login"><%= t(:log_in)%></a><span>|</span><a href="/signup" title="signup"><%= t(:sign_up)%></a></p>
+      <% end %> </p>
+    <div class="cl">&nbsp;</div>
+    <div id="header">
+      <h1 id="logo"><a class="notext" href="/" title="Emporium">Emporium</a></h1>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div id="navigation">
+      <ul>
+        <% if session[:user_id] %>
+            <li class="first"><a class="active" href="/admin/author"><span><%= t(:authors)%></span></a></li>
+            <li><a href="/admin/publishers"><span><%= t(:publisher)%></span></a></li>
+            <li><a href="/admin/books"><span><%= t(:books)%></span></a></li>
+            <li><a href="/admin/products"><span><%= t(:product)%></span></a></li>
+            <li><a href="/catalog"><span><%= t(:catalog)%></span></a></li>
+        <% else %>
+            <li><a href="/catalog"><span><%= t(:catalog)%></span></a></li>
+        <% end %>
+      </ul>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div class="cl">&nbsp;</div>
+    <div id="main">
+      <div id="content">
+        <div class="top"></div>
+        <div class="inner">
+          <div id="products">
+            <h2><%= "<h2>#{@page_title}</h2>".html_safe if @page_title %></h2>
+            <div class="row">
+                  <% if flash[:notice] %>
+                  <% end %>
+                  <%= yield %>
+              <div class="cl">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% if @cart %>
+        <div id="shopping_cart">
+          <%= render :partial => "cart/cart" %>
+        </div>
+        <%= drop_receiving_element("shopping_cart", :url =>
+            { :controller => "cart", :action => "add" }) %>
+    <% end %>
+    <div id="footer">
+      <p class="bottom-menu"><a href="#" title="My Account">My Account</a><span>|</span><a href="#" title="About Us">About Us</a>'heroku' is not recognized as an internal or external command,
+        operable program or batch file</p>
+      <div id="bottom-logo"><a href="/" class="notext" title="Emporium">&copy; 2016 Emporium</a></div>
+      <div class="cl">&nbsp;</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<% if @book %>
+<h2>by <%= @book.authors.map{|a| a.name}.join(", ") %></h2>
+<%= image_tag @book.cover_image.url unless @book.cover_image.blank? %>
+<dl>
+  <dt><%= t(:price)%></dt>
+  <dd>$<%= sprintf("%0.2f", @book.price) -%></dd>
+  <dt><%= t(:page_count)%></dt>
+  <dd><%= @book.page_count -%></dd>
+  <dt><%= t(:publisher)%></dt>
+  <dd><%= @book.publisher.name %></dd>
+  <dt><%= t(:blurb)%></dt>
+  <dd><%= @book.blurb %></dd>
+</dl>
+<p><%= link_to "Back to Catalog", :action => "index" %></p>
+
+<% else %>
+    <%= image_tag @product.cover_image.url unless @product.cover_image.blank? %>
+    <dl>
+      <p>
+        <strong>Title:</strong>
+        <%= @product.title %>
+      </p>
+
+      <p>
+        <strong>Seller info:</strong>
+        <%= @product.seller_info %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @product.description %>
+      </p>
+
+      <p>
+        <strong>Amount:</strong>
+        <%= @product.amount %>
+      </p>
+
+      <p>
+        <strong>Type:</strong>
+        <%= @product.type %>
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        <%= @product.category %>
+      </p>
+
+      <p>
+        <strong>Price:</strong>
+        <%= @product.price %>
+      </p>
+
+      <p>
+        <strong>Created at:</strong>
+        <%= @product.created_at %>
+      </p>
+
+      <p>
+        <strong>Updated at:</strong>
+        <%= @product.updated_at %>
+      </p>
+    </dl>
+
+    <p><%= link_to "Back to Catalog", :action => "index" %></p>
+<% end %>

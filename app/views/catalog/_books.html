@@ -1,0 +1,41 @@
+<ul id="books">
+    <% for book in @books %>
+    <li class="book" id="book_<%= book.id %>">
+        <dl>
+            <dt><%= link_to book.title, :action => "show", :id => book %></dt>
+            <% for author in book.authors %>
+            <dd><%= author.last_name %>, <%= author.first_name %></dd>
+            <% end %>
+            <dd><%= pluralize(book.page_count, t(:page)) %></dd>
+            <dd><%=t :price %>: $<%= sprintf("%.2f", book.price) %></dd>
+            <dd><small><%=t :publisher %>: <%= book.publisher.name %></small><dd>
+            ></dd>
+            <dd>
+                <strong>
+                    <%= add_book_link("+", book) %>
+                </strong>
+            </dd>
+        </dl>
+    </li>
+    <%= draggable_element("book_#{book.id}", :revert => true) %>
+    <% end %>
+
+    <% for product in @products %>
+    <li class="book" id="product_<%= product.id %>">
+        <dl>
+            <dt><%= link_to product.title, :action => "show", :id => product %></dt>
+            <dd><%=t :seller_info %>: <%= product.seller_info %></dd>
+            <dd><%= t(:amount) %>: <%= product.amount %></dd>
+            <dd><%=t :price %>: $<%= sprintf("%.2f", book.price) %></dd>
+            <dd><small><%=t :category %>: <%= product.category %></small><dd>
+            ></dd>
+            <dd>
+                <strong>
+                    <%= add_book_link("+", product) %>
+                </strong>
+            </dd>
+        </dl>
+    </li>
+    <%= draggable_element("product_#{product.id}", :revert => true) %>
+    <% end %>
+</ul>

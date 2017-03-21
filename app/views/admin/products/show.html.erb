@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t(:title) %>:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong><%= t(:seller_info) %>:</strong>
+  <%= @product.seller_info %>
+</p>
+
+<p>
+  <strong><%= t(:description) %></strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong><%= t(:amount) %>:</strong>
+  <%= @product.amount %>
+</p>
+
+<p>
+  <strong><%= t(:type) %>:</strong>
+  <%= @product.types %>
+</p>
+
+<p>
+  <strong><%= t(:category) %>:</strong>
+  <%= @product.category %>
+</p>
+
+<p>
+  <strong><%= t(:price) %>:</strong>
+  <%= @product.price %>
+</p>
+
+<p><strong><%= t(:pr_image)%>:</strong></p>
+<% if @product.cover_image.nil? %>
+    <dd>N/A</dd>
+<% else %>
+    <dd><%= image_tag @product.cover_image.url %></dd>
+<% end %>
+
+<%= link_to t(:edit_it), edit_admin_product_path(@product) %> |
+<%= link_to t(:back_it), admin_products_path %>

@@ -1,0 +1,9 @@
+
+<div class= "Sign_Form">
+  <h1><%= t(:log_in)%></h1>
+  <%= form_tag(:controller => 'sessions', :action => 'login_attempts') do %>
+      <p> <%= t(:username_or_email)%> </br> <%= text_field_tag(:username_or_email) %></p>
+      <p> <%= t(:password)%> </br> <%= password_field_tag :login_password %></p>
+      <%= submit_tag t(:log_in), :class => 'buttons' %>
+  <% end %>
+</div>

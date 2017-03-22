@@ -1,3 +1,3 @@
-<strong><%= t(:please_confirm_adding)%> <em><%= @book.title %></em>
+<strong><%= t(:please_confirm_adding) %> <em><%= @book.title %></em>
     <%= t(:to_your_shopping_cart)%></strong>
-<%= button_to "t(:confirm)", :action => "add", :id => params[:id] %>
+<%= button_to t(:confirm), :action => "add", :id => params[:id] %>

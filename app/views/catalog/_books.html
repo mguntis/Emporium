@@ -17,7 +17,7 @@
             </dd>
         </dl>
     </li>
-    <%= draggable_element("#{book.id}", :revert => true) %>
+    <%= draggable_element("book_#{book.id}", :revert => true) %>
     <% end %>
 
     <% for product in @products %>

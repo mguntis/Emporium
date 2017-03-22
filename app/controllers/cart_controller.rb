@@ -3,8 +3,8 @@ class CartController < ApplicationController
 
 
   def add
-    @book = Book.find(params[:id])
     params[:id].gsub!(/book_/, "")
+    @book = Book.find(params[:id])
     if request.xhr?
       @item = @cart.add(params[:id])
       flash.now[:cart_notice] = "Added <em>#{@item.book.title}</em>".html_safe

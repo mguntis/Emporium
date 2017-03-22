@@ -3,15 +3,15 @@ class CartController < ApplicationController
 
 
   def add
-    params[:id].gsub!(/book_/, "")
     @book = Book.find(params[:id])
+    params[:id].gsub!(/book_/, "")
     if request.xhr?
       @item = @cart.add(params[:id])
-      flash.now[:cart_notice] = "#{t(:added)} <em>#{@item.book.title}</em>".html_safe
+      flash.now[:cart_notice] = "Added <em>#{@item.book.title}</em>".html_safe
       render :action => "add_with_ajax"
     elsif request.post?
       @item = @cart.add(params[:id])
-      flash[:cart_notice] = "#{t(:added)} <em>#{@item.book.title}</em>".html_safe
+      flash[:cart_notice] = "Added <em>#{@item.book.title}</em>".html_safe
       redirect_to session[:return_to] || {:controller => "catalog"}
     else
       render

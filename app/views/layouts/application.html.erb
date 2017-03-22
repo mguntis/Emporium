@@ -18,7 +18,7 @@
       <% if session[:user_id] %>
         <p id="top-nav"><span class="welcome"> <%= t(:welcome_msg)%> </span><a href="#" title="Eng"><%= link_to_unless_current "English", locale: "en" %></a><span>|</span><a href="#" title="LV"><%= link_to_unless_current "Latviešu", locale: "lv" %></a><span>|</span><a href="#" title="Nosrsk"><%= link_to_unless_current "Norwegian", locale: "norsk" %></a><span>|</span><a href="/logout" title="logout"><%= t(:logout)%></a></p>
       <% else %>
-        <p id="top-nav"><span class="welcome"> <%= t(:welcome_msg)%> </span><a href="#" title="Eng"><%= link_to_unless_current "English", locale: "en" %></a><span>|</span><a href="#" title="LV"><%= link_to_unless_current "Latviešu", locale: "lv" %></a><span>|</span><a href="#" title="Nosrsk"><%= link_to_unless_current "Norwegian", locale: "norsk" %></a><span>|</span><a href="/" title="login"><%= t(:log_in)%></a><span>|</span><a href="/signup" title="signup"><%= t(:sign_up)%></a></p>
+        <p id="top-nav"><span class="welcome"> <%= t(:welcome_msg)%> </span><a href="#" title="Eng"><%= link_to_unless_current "English", locale: "en" %></a><span>|</span><a href="#" title="LV"><%= link_to_unless_current "Latviešu", locale: "lv" %></a><span>|</span><a href="#" title="Nosrsk"><%= link_to_unless_current "Norwegian", locale: "norsk" %></a><span>|</span><a href="/login" title="login"><%= t(:log_in)%></a><span>|</span><a href="/signup" title="signup"><%= t(:sign_up)%></a></p>
       <% end %> </p>
     <div class="cl">&nbsp;</div>
     <div id="header">

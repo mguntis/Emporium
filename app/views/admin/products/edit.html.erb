@@ -1,6 +1,9 @@
 <h1><%= t(:edit_it)%></h1>
 
-<%= render 'form' %>
+<%= form_tag({:action => 'update', :id => @product},
+             {:multipart => true, :method => :put}) do %>
+    <%= render :partial => 'form' %>
+<% end %>
 
 <%= link_to t(:show_it), :action => 'show', :id => @product %> |
 <%= link_to t(:back_it), :action => 'index' %>

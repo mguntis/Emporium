@@ -51,7 +51,7 @@ gem 'thin'
 gem 'dynamic_form'
 gem 'protected_attributes'
 
-gem 'paperclip', '~> 4.2'
+gem 'paperclip', '~> 6.1'
 
 gem 'will_paginate', '~> 3.0.6'
 
